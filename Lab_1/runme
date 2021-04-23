@@ -1,0 +1,3 @@
+#!/bin/bash
+cd buildroot-2021.02/output/images
+./start-qemu.sh

@@ -1,0 +1,3 @@
+#!/bin/sh
+#ntpd -q
+ntpdate -u 0.pl.pool.ntp.org
