@@ -1,0 +1,8 @@
+config BR2_PACKAGE_TIMER
+    bool "timer"
+    depends on BR2_PACKAGE_LIBGPIOD
+    help
+      Simple timer application with lap function.
+
+comment "timer depends on libgpiod library"
+    depends on !BR2_PACKAGE_LIBGPIOD
