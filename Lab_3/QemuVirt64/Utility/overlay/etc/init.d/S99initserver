@@ -1,0 +1,29 @@
+#!/bin/sh
+
+start() {
+    printf "Starting utility server..."
+    cd /server
+    python3 server.py
+}
+stop() {
+    printf "Server stopped."
+    killall python3
+}
+
+case "$1" in
+    start)
+		start
+		;;
+    stop)
+		stop
+		;;
+    restart|reload)
+		stop
+		sleep 1
+		start
+		;;
+    *)
+		echo "Usage: $0 {start|stop|restart}"
+		exit 1
+esac
+
