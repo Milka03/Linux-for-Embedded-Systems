@@ -1,0 +1,10 @@
+#!/bin/sh
+alsactl init
+sleep 3
+
+mpc update
+mpc clear
+mpc add /
+mpc repeat 1
+screen -m -d /usr/bin/python3 /opt/music_player.py
+screen -m -d /usr/bin/python3 /opt/webservice.py
