@@ -1,0 +1,31 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+
+start()
+{
+	echo "---- MUSIC PLAYER START ----"
+	alsactl init
+	sleep 3
+    modprobe gpio-mpc8xxx
+    mpc update
+    mpc clear 
+    mpc add /
+    mpc repeat 1
+	screen -m -d python3 webservice.py 
+	screen -m -d python3 music_player.py
+}        
+         
+restart()
+{    
+	echo "---- MUSIC PLAYER START ----"
+	alsactl init
+	sleep 3
+    modprobe gpio-mpc8xxx
+    mpc update
+    mpc clear 
+    mpc add /
+    mpc repeat 1
+	screen -m -d python3 webservice.py 
+	screen -m -d python3 music_player.py
+}
